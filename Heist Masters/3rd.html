@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Heist Masters</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <div id="timer">Time Remaining: <span id="time">60</span> seconds</div>
+    <div ><button id="hint">Hint</button>
+        <div class="hint-dropdown">
+            <p>Let the age of son = X years<br>Age of mother would be =2X<br>As per question 20 years ago:
+
+10 (X -20) = 2X - 20</p>
+        </div>
+    </div>
+    <div id="question-section">
+        <h1>Question:3</h1>
+        <p id="question">A mother is twice as old as her son. If 20 years ago, the age of the mother was 10 times the age of the son, what is the present age of the mother?</p>
+        <input type="text" id="answer-input" placeholder="Enter your answer...">
+        <button id="submit-btn">Submit</button>
+    </div>
+    <script>
+        let timeRemaining = 60;
+        let timer = setInterval(() => {
+            timeRemaining--;
+            document.getElementById("time").textContent = timeRemaining;
+            if (timeRemaining === 0) {
+                clearInterval(timer);
+                alert("Time's up!");
+                window.location.href = "start.html";
+            }
+        }, 1000);
+        const hintDropdown = document.querySelector(".hint-dropdown");
+        document.getElementById("hint").addEventListener("click", () => {
+            hintDropdown.style.display = hintDropdown.style.display === "block" ? "none" : "block";
+        });
+        document.getElementById("submit-btn").addEventListener("click", () => {
+            const answer = document.getElementById("answer-input").value;
+            const correctAnswer = "45";
+            const userAnswer = document.getElementById("answer-input").value;
+            if (userAnswer.trim().toLowerCase() === correctAnswer.toLowerCase()) {
+                alert("Congratulations! Your answer is correct.");
+                window.location.href = "4th.html";
+            } 
+            else {
+                const retry = confirm("Sorry, your answer is incorrect. Would you like to try again?");
+                if (retry) {
+                    document.getElementById("answer-input").value = "";
+                } 
+                else {
+                    window.location.href = "start.html";
+                }
+            }
+
+        });
+    </script>
+</body>
+</html>

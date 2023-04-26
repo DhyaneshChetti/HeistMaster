@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Heist Masters</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <div id="timer">Time Remaining: <span id="time">60</span> seconds</div>
+    <div ><button id="hint">Hint</button>
+        <div class="hint-dropdown">
+            <p>Let the number be 10x +y<br>
+Number obtained by interchanging the digits = 10y + x<br>
+According to the question:
+(10x + y) - (10y + x) = 45<br>Solve to find x-y</p>
+        </div>
+    </div>
+    <div id="question-section">
+        <h1>Question:2</h1>
+        <p id="question">The difference between a two-digit number and the number obtained by interchanging the position of the digits is 45. What is the difference between digits of that number?</p>
+        <input type="text" id="answer-input" placeholder="Enter your answer...">
+        <button id="submit-btn">Submit</button>
+    </div>
+    <script>
+        let timeRemaining = 60;
+        let timer = setInterval(() => {
+            timeRemaining--;
+            document.getElementById("time").textContent = timeRemaining;
+            if (timeRemaining === 0) {
+                clearInterval(timer);
+                alert("Time's up!");
+                window.location.href = "start.html";
+            }
+        }, 1000);
+        const hintDropdown = document.querySelector(".hint-dropdown");
+        document.getElementById("hint").addEventListener("click", () => {
+            hintDropdown.style.display = hintDropdown.style.display === "block" ? "none" : "block";
+        });
+        document.getElementById("submit-btn").addEventListener("click", () => {
+            const answer = document.getElementById("answer-input").value;
+            const correctAnswer = "5";
+            const userAnswer = document.getElementById("answer-input").value;
+            if (userAnswer.trim().toLowerCase() === correctAnswer.toLowerCase()) {
+                alert("Congratulations! Your answer is correct.");
+                window.location.href = "3rd.html";
+            } 
+            else {
+                const retry = confirm("Sorry, your answer is incorrect. Would you like to try again?");
+                if (retry) {
+                    document.getElementById("answer-input").value = "";
+                } 
+                else {
+                    window.location.href = "start.html";
+                }
+            }
+
+        });
+    </script>
+</body>
+</html>

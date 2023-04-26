@@ -1,0 +1,84 @@
+#timer {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+}
+#hint {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    font-size: 15px;
+    cursor: pointer;
+    color: white;
+    text-decoration:solid;
+    background-color: #007bff;
+    border: none;
+    width: 80px;
+    text-align: center;
+    border-radius: 50px;
+    height: 40px;
+    padding:2px;
+}
+.hint-dropdown {
+    display: none;
+    position: absolute;
+    top: 80px;
+    right: 50px;
+    background-color: #f9f9f9;
+    color: black;
+    padding: 10px;
+    border: 1px solid #ddd;
+    z-index: 1;
+}
+#question-section {
+    margin: 100px auto;
+    width: 400px;
+    text-align: center;
+}
+#answer-input  {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 18px;
+    width: 100%;
+    max-width: 300px;
+}
+#submit-btn {
+    margin-top: 20px;
+    padding: 15px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+    width: 100px;
+}
+#email{
+    margin: 5px 5px 5px 0px;
+    padding: 10px;
+    font-size: 18px;
+    width: 100%;
+    max-width: 300px;
+}
+#password{
+    margin: 5px 5px 5px 0px;
+    padding: 10px;
+    font-size: 18px;
+    width: 100%;
+    max-width: 300px;
+}
+#username{
+    margin: 5px 5px 5px 0px;
+    padding: 10px;
+    font-size: 18px;
+    width: 100%;
+    max-width: 300px;
+}
+#confirmPassword{
+    margin: 5px 5px 5px 0px;
+    padding: 10px;
+    font-size: 18px;
+    width: 100%;
+    max-width: 300px;
+}
